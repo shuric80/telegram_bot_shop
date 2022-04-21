@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aiogram = "*"
+uvloop = "*"
+ujson = "*"
+cchardet = "*"
+aiodns = "*"
+dynaconf = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.8"
