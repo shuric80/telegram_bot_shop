@@ -214,3 +214,4 @@ cython_debug/
 
 # Ignore dynaconf secret files
 .secrets.*
+!/.secrets.toml
