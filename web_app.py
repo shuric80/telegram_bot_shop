@@ -38,5 +38,3 @@ async def submit_order(request):
     await bot.answer_web_app_query(query_id, result)
 
 
-
-
