@@ -20,7 +20,7 @@ async def cmd_start(message: types.Message):
     markup = types.InlineKeyboardMarkup(inline_keyboard=[[
         types.InlineKeyboardButton(
             text="Order Food",
-            web_app=types.WebAppInfo(url=f'https://{config.WEBHOOK_HOST}'),
+            web_app=types.WebAppInfo(url=f'https://{settings.WEBHOOK_HOST}'),
         )
     ]])
     await message.answer("<b>Hey!</b>\nYou can order food here!",
@@ -50,6 +50,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # dp = Dispatcher(bot)
-    # executor.start_polling(dp, skip_updates=True)
     main()
