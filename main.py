@@ -1,7 +1,7 @@
 from aiogram import Dispatcher, types, Bot
 from aiogram.utils.executor import set_webhook
 from aiohttp import web
-from dynaconf import settings
+from config import settings
 from web_app import routes as webapp_routes
 
 
