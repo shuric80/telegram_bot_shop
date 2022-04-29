@@ -13,10 +13,12 @@ routes = web.RouteTableDef()
 async def index(request) -> Response:
     return FileResponse('static/index.html')
 
-@routes.post('/submitOrder') -> Response:
-async def submit_order(request):
+
+@routes.post('/submitOrder')
+async def submit_order(request) -> Response:
     data = await request.json()
-    init_data = parse_init_data(token=settings.BOT_TOKEN, raw_init_data=data['initData'])
+    init_data = parse_init_data(token=settings.BOT_TOKEN,
+                                raw_init_data=data['initData'])
     if not init_data:
         return
     bot: Bot = request.app['bot']
@@ -27,14 +29,13 @@ async def submit_order(request):
         name, price, amount = item.values()
         result_text += f'{name} x{amount} - <b>{price}</b>'
 
-    result_text += '\n'+ data['totalPrice']
+    result_text += '\n' + data['totalPrice']
 
     result = types.InlineQueryResultArticle(
         id=query_id,
         title='Order',
-        input_message_content=types.InputTextMessageContent(message_text=result_text),
+        input_message_content=types.InputTextMessageContent(
+            message_text=result_text),
     )
 
     await bot.answer_web_app_query(query_id, result)
-
-

@@ -1,2 +1,4 @@
 [default]
 webhook_path='/'
+webhook={url = 'https://veselyikolbasnik.com/tgbot/', path='/tgbot', host='https://veselyikolbasnik.com/'}
+webapp={host='0.0.0.0', port=8000}

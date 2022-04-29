@@ -10,6 +10,7 @@ ujson = "*"
 cchardet = "*"
 aiodns = "*"
 dynaconf = "*"
+aiohttp-jinja2 = "*"
 
 [dev-packages]
 pytest = "*"
